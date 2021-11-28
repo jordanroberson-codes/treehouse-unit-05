@@ -81,17 +81,19 @@ for (let i = 0; i < keyButtons.length; i++) {
 
 //Checks for correct letters and will determine if the player wins or loses
 function checkWin() {
-  let letter = document.querySelectorAll("li.letter");
-  let show = document.querySelectorAll("li.show");
+  let letter = document.getElementsByClassName("letter");
+  let show = document.getElementsByClassName("show");
 
   if (show.length === letter.length) {
     overlay.className = "win";
+    overlay.style.visibility = "visible";
     overlay.style.display = "flex";
     title.textContent = "AWESOME JOB!";
   }
 
-  if (missed >= 5) {
+  if (missed > 4) {
     overlay.className = "lose";
+    overlay.style.visibility = "visible";
     overlay.style.display = "flex";
     title.textContent = "sorry, better luck next time";
   }
