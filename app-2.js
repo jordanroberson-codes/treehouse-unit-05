@@ -41,6 +41,7 @@ function addPhraseToDisplay(arr) {
     }
     if (arr[i] !== " ") {
       listItem.classList.add("letter");
+      listItem.textContent = arr[i];
     }
     characterList.appendChild(listItem);
   }
@@ -54,7 +55,7 @@ function checkLetter(userGuess) {
   let match = null;
   for (let i = 0; i < totalLI.length; i++) {
     if (userGuess === totalLI[i].innerText.toLowerCase()) {
-      totalLI[i].className = "show";
+      totalLI[i].classList.add("show");
       match = totalLI[i].innerText;
     }
   }
